@@ -1,6 +1,7 @@
 import TableCell from "@material-ui/core/TableCell";
 
 import StaffListControls from "./StaffListControls";
+import LetterAvatar from "./../LetterAvatar/LetterAvatar";
 
 export default function StaffListCell(props) {
   const { columnHeader, cellValue } = props;
@@ -21,6 +22,9 @@ export default function StaffListCell(props) {
     }
     if (columnHeader === "controls") {
       return <StaffListControls id={props.id} />;
+    }
+    if (columnHeader === "avatar") {
+      return <LetterAvatar id={props.id} />;
     }
     return cellValue;
   }

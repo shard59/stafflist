@@ -2,6 +2,7 @@ import { makeAutoObservable } from "mobx";
 
 class List {
   keys = {
+    avatar: "",
     surname: "Фамилия",
     name: "Имя",
     patronymic: "Отчество",
@@ -12,7 +13,6 @@ class List {
     dateOfFiring: "Дата увольнения",
     isDriver: "Наличие прав",
     controls: "",
-    // colleagues: "Коллеги",
   };
   list = {
     1: {
@@ -25,7 +25,6 @@ class List {
       dateOfHiring: "2010-01-01",
       dateOfFiring: "",
       isDriver: true,
-      // colleagues: [1, 2, 4],
     },
     2: {
       surname: "Петров",
@@ -37,7 +36,6 @@ class List {
       dateOfHiring: "2012-01-01",
       dateOfFiring: "",
       isDriver: true,
-      // colleagues: [1, 2, 4],
     },
     3: {
       surname: "Алексеева",
@@ -49,7 +47,6 @@ class List {
       dateOfHiring: "2010-02-01",
       dateOfFiring: "",
       isDriver: true,
-      // colleagues: [1, 2, 4],
     },
     4: {
       surname: "Ульянов",
@@ -61,7 +58,6 @@ class List {
       dateOfHiring: "2013-01-01",
       dateOfFiring: "2016-01-01",
       isDriver: false,
-      // colleagues: [1, 2, 4],
     },
     5: {
       surname: "Дмитриченко",
@@ -73,12 +69,17 @@ class List {
       dateOfHiring: "2020-01-01",
       dateOfFiring: "",
       isDriver: false,
-      // colleagues: [1, 2, 4],
     },
   };
 
   constructor() {
     makeAutoObservable(this);
+  }
+
+  getAvaName(id) {
+    const surname = this.list[id].surname;
+    const name = this.list[id].name;
+    return `${surname.slice(0,1).toUpperCase()}${name.slice(0,1).toUpperCase()}`;
   }
 
   generatePersonId() {

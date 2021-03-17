@@ -9,7 +9,7 @@ import PersonDialogContent from "./PersonDialogContent";
 
 import dialog from "./../store/dialog";
 
-export default function AddPersonDialog(props) {
+export default function PersonDialog(props) {
   const { type } = dialog;
 
   return (

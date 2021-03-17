@@ -42,12 +42,6 @@ export default observer(function PersonForm(props) {
     </MenuItem>
   ));
 
-  // const colleagues = props.getColleaguesList().map((name) => (
-  //   <option key={name} value={name}>
-  //     {name}
-  //   </option>
-  // ));
-
   const handleChangeText = formState.handleChangeTextInput.bind(formState);
   const handleChangeCheck = formState.handleChangeCheck.bind(formState);
 

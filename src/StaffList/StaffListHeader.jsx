@@ -17,7 +17,7 @@ export default function StaffListHeader(props) {
   const classes = useStyles();
 
   const headers = Object.values(props.staffKeys).map((header) => (
-    <TableCell className={classes.tableHeaderCell} key={header}>
+    <TableCell className={classes.tableHeaderCell} key={header + Math.random()}>
       {header}
     </TableCell>
   ));
