@@ -1,6 +1,6 @@
-import professions from "../store/professions";
-import formState from "../store/formState";
 import React from "react";
+import { observer } from "mobx-react-lite";
+
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -11,10 +11,10 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Radio from "@material-ui/core/Radio";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormHelperText from "@material-ui/core/FormHelperText";
-import { observer } from "mobx-react-lite";
+
 import formValidation from "../store/formValidation";
-// import Select from "@material-ui/core/Select";
-// import InputLabel from "@material-ui/core/InputLabel";
+import professions from "../store/professions";
+import formState from "../store/formState";
 
 const useStyles = makeStyles({
   form: {
@@ -209,24 +209,6 @@ export default observer(function PersonForm(props) {
             label="Наличие водительских прав"
           />
         </FormControl>
-        {/* <FormControl >
-          <InputLabel shrink htmlFor="select-multiple-native">
-            Должность
-          </InputLabel>
-          <Select
-            className={classes.textInput}
-            required
-            native
-            multiple
-            inputProps={{
-              id: 'select-multiple-native',
-            }}
-            label=""
-            variant="outlined"
-          >
-            {colleagues}
-          </Select>
-        </FormControl> */}
       </div>
     </form>
   );

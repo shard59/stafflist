@@ -1,4 +1,5 @@
 import TableRow from "@material-ui/core/TableRow";
+
 import StaffListCell from "./StaffListCell";
 
 export default function StaffListRow(props) {

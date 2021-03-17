@@ -1,9 +1,12 @@
 import list from "./store/list";
+import dialog from "./store/dialog";
+import { observer } from "mobx-react-lite";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
-import AddPersonBtn from "./AddPerson/AddPersonBtn";
 import StaffList from "./StaffList/StaffList";
+import PersonBtn from "./PersonBtn/PersonBtn";
+import PersonDialog from "./PersonDialog/PersonDialog";
 
 const localStorageMockup = () => {
   localStorage.setItem("staffListTestWork", JSON.stringify(list.list));
@@ -22,7 +25,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function App(props) {
+export default observer(function App(props) {
   const classes = useStyles();
 
   return (
@@ -32,8 +35,9 @@ export default function App(props) {
           Реестр сотрудников
         </Typography>
         <StaffList />
-        <AddPersonBtn />
+        <PersonBtn type="add" />
+        <PersonDialog open={dialog.open} />
       </Container>
     </div>
   );
-}
+});

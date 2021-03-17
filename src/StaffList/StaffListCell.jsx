@@ -1,4 +1,5 @@
 import TableCell from "@material-ui/core/TableCell";
+
 import StaffListControls from "./StaffListControls";
 
 export default function StaffListCell(props) {
